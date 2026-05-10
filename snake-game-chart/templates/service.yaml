@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: snake-game-service
+
+spec:
+  type: {{ .Values.service.type }}
+
+  selector:
+    app: snake-game
+
+  ports:
+  - port: {{ .Values.service.port }}
+    targetPort: 80
